@@ -1,0 +1,19 @@
+<?php
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('iAlbums');
+echo $this->doctype(); ?>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <?= $this->headMeta(); ?>
+    <?$this->headMeta()->setCharset('UTF-8'); ?>
+    <?= $this->headTitle(); ?>
+    <?= $this->headLink()->appendStylesheet($this->baseUrl().'/css/blueprint/screen.css')
+                                ->appendStylesheet($this->baseUrl().'/css/custom.css');    ?>
+</head>
+<body>
+	<div id="content" class="container">
+        <h1 class="box arc outline"><?= $this->escape($this->title); ?></h1>
+    <?= $this->layout()->content; ?>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?php 
+$this->title = "iAlbums";
+$this->headTitle($this->title);
+?>
+<p>
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'add'));?>" class="button">Add new album</a>
+</p>
+<table>
+<tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach($this->albums as $album) : ?>
+<tr>
+    <td><?= $this->escape($album->title);?></td>
+    <td><?= $this->escape($album->artist);?></td>
+    <td>
+        <a href="<?= $this->url(array('controller'=>'index', 'action'=>'edit', 'id'=>$album->id));?>">Edit</a>
+        <a href="<?= $this->url(array('controller'=>'index', 'action'=>'delete', 'id'=>$album->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
+<!--<button type="submit" class="button positive">
+<img src="css/blueprint/plugins/buttons/icons/tick.png" alt=""/> Save
+</button>
+
+<a class="button" href="/password/reset/">
+<img src="css/blueprint/plugins/buttons/icons/key.png" alt=""/> Change Password
+</a>
+
+<a href="#" class="button negative">
+<img src="css/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+</a>-->
